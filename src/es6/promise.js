@@ -12,7 +12,7 @@ let promise = new Promise(function(reslove, reject) {
             }
         }, 500);
     } catch (e) {
-        reject(e.message);
+        reject(e.message); //异步执行失败
     }
 });
 
