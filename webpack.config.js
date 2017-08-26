@@ -1,6 +1,7 @@
 const servers = require('./servers/index.js');
 const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: __dirname + '/src/main.js', //入口文件
@@ -20,6 +21,9 @@ module.exports = {
         loaders: [{
             test: /\.html$/,
             loader: 'file-loader?name=[path][name].[ext]!extract-loader!html-loader'
+        }, {
+            test: /\.scss$/,
+            loader: ExtractPlugin.extract('style-loader', 'css-loader!sass-loader')
         }]
     },
     devServer: { //生成环境构建
@@ -35,6 +39,7 @@ module.exports = {
         new htmlWebpackPlugin({
             title: 'Full-stack-development'
         }),
-        new webpack.HotModuleReplacementPlugin() //webpack自带的热更新插件
+        new webpack.HotModuleReplacementPlugin(), //webpack自带的热更新插件
+        new ExtractPlugin('[name].css')
     ]
 }
