@@ -16,6 +16,10 @@ module.exports = {
                 loader: 'babel-loader',
                 options: { presets: ['es2016'] }
             }],
+        }],
+        loaders: [{
+            test: /\.html$/,
+            loader: 'file-loader?name=[path][name].[ext]!extract-loader!html-loader'
         }]
     },
     devServer: { //生成环境构建
