@@ -1,0 +1,3 @@
+#ignore these files 
+dist/* 
+node_modules/*
