@@ -21,13 +21,12 @@ module.exports = {
             test: /\.scss$/,
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
-                use: [{ loader: 'css-loader', options: { importLoaders: 1 } }, 'postcss-loader', 'sass-loader'],
-
+                use: [{ loader: 'css-loader', options: { importLoaders: 1 } }, 'postcss-loader', 'sass-loader']
             })
         }],
         loaders: [{
             test: /\.html$/,
-            loader: 'file-loader?name=[path][name].[ext]!extract-loader!html-loader',
+            loader: 'file-loader',
             query: {
                 minimize: true
             }
