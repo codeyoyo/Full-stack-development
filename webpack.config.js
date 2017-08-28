@@ -1,7 +1,7 @@
 const servers = require('./servers/index.js');
 const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: __dirname + '/src/main.js', //入口文件
@@ -19,7 +19,11 @@ module.exports = {
             }],
         }, {
             test: /\.scss$/,
-            use: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'postcss-loader', 'sass-loader']
+            use: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: [{ loader: 'css-loader', options: { importLoaders: 1 } }, 'postcss-loader', 'sass-loader'],
+
+            })
         }],
         loaders: [{
             test: /\.html$/,
@@ -36,13 +40,14 @@ module.exports = {
         setup: function(app) { //使用nodejs作代理请求或后台数据构造
             servers(app);
         },
-        hot: true //热更新开启
+        hot: true, //热更新开启
+        contentBase: __dirname + '/dist'
     },
     plugins: [ //webpack插件配置
         new htmlWebpackPlugin({
             title: 'Full-stack-development'
         }),
         new webpack.HotModuleReplacementPlugin(), //webpack自带的热更新插件
-        new ExtractPlugin('[name].css')
+        new ExtractTextPlugin(__dirname + '/dist/css/[name].css')
     ]
 }
