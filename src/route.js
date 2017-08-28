@@ -9,5 +9,5 @@ export default {
     "class": { "func": classTest },
     'module': { 'func': moduleFunc },
     'promise': { 'func': promise },
-    "scss1": { 'func': scss1 }
+    "scss1": { 'func': scss1['func'], 'html': scss1['html'] }
 }

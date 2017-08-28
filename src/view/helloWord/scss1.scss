@@ -2,3 +2,7 @@ $primary-color:#F40A0A;
 body {
     color: $primary-color;
 }
+
+.flex-box {
+    display: flex;
+}

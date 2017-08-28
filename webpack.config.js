@@ -17,13 +17,16 @@ module.exports = {
                 loader: 'babel-loader',
                 options: { presets: ['es2016'] }
             }],
+        }, {
+            test: /\.scss$/,
+            use: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'postcss-loader', 'sass-loader']
         }],
         loaders: [{
             test: /\.html$/,
-            loader: 'file-loader?name=[path][name].[ext]!extract-loader!html-loader'
-        }, {
-            test: /\.scss$/,
-            loader: ExtractPlugin.extract('style-loader', 'css-loader!sass-loader')
+            loader: 'file-loader?name=[path][name].[ext]!extract-loader!html-loader',
+            query: {
+                minimize: true
+            }
         }]
     },
     devServer: { //生成环境构建

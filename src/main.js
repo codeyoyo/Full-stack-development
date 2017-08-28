@@ -7,5 +7,14 @@ if (strHash == '') {
     let p = new person('webpack', 'hello');
     document.write(p.say());
 } else {
-    route[strHash]['func']();
+    let routeObj = route[strHash];
+    if (routeObj['func']) {
+        routeObj['func']();
+    }
+    if (routeObj['html']) {
+        document.body.innerHTML += routeObj['html'];
+    }
+    if (routeObj['css']) {
+        console.log(routeObj['css']);
+    }
 }
