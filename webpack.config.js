@@ -49,7 +49,8 @@ module.exports = {
     },
     plugins: [ //webpack插件配置
         new htmlWebpackPlugin({
-            title: 'Full-stack-development'
+            title: 'Full-stack-development',
+            template: __dirname + '/src/index.html'
         }),
         new webpack.HotModuleReplacementPlugin(), //webpack自带的热更新插件
         extractCSS,
