@@ -2,7 +2,7 @@
 我的全栈开发的学习笔记
 
 ## 项目运行
-####记得先安装了node.js
+#### 记得先安装了node.js
 ```
 git clone https://github.com/codeyoyo/Full-stack-development.git
 npm install
