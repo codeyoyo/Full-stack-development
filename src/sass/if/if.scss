@@ -1,0 +1,9 @@
+.p-world {
+    $color: #333;
+    @if lightness($color)>30% {
+        background-color: #000;
+    }
+    @else {
+        background-color: #fff;
+    }
+}

@@ -1,0 +1,6 @@
+@for $i from 1 to 10 {
+    .border-#{$i} {
+        border: #{$i}px solid blue;
+        margin-top: #{$i}px;
+    }
+}

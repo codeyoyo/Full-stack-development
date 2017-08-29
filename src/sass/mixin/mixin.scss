@@ -1,0 +1,8 @@
+@mixin left($value:10px) {
+    float: left;
+    margin-right: $value;
+}
+
+.div-class {
+    @include left(20px);
+}

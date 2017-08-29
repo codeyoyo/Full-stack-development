@@ -1,0 +1,8 @@
+@function double($n) {
+    @return $n*2;
+}
+
+#sidebar {
+    width: double(30px);
+    border: 1px solid royalblue;
+}
