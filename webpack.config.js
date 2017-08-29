@@ -3,6 +3,9 @@ const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const extractCSS = new ExtractTextPlugin('css/[name].css');
+const extractSASS = new ExtractTextPlugin('css/[name].css');
+
 module.exports = {
     entry: __dirname + '/src/main.js', //入口文件
     output: { //代码输出生成
@@ -18,11 +21,13 @@ module.exports = {
                 options: { presets: ['es2016'] }
             }],
         }, {
-            test: /\.scss$/,
-            use: ExtractTextPlugin.extract({
-                fallback: 'style-loader',
-                use: [{ loader: 'css-loader', options: { importLoaders: 1 } }, 'postcss-loader', 'sass-loader']
-            })
+            test: /\.css$/,
+            use: extractCSS.extract(['css-loader', 'postcss-loader'])
+        }, {
+            test: /\.scss$/i,
+            include: [/src/],
+            exclude: [/node_modules/],
+            use: extractCSS.extract(['css-loader', 'postcss-loader', 'sass-loader'])
         }],
         loaders: [{
             test: /\.html$/,
@@ -47,6 +52,7 @@ module.exports = {
             title: 'Full-stack-development'
         }),
         new webpack.HotModuleReplacementPlugin(), //webpack自带的热更新插件
-        new ExtractTextPlugin(__dirname + '/dist/css/[name].css')
+        extractCSS,
+        extractSASS
     ]
 }
