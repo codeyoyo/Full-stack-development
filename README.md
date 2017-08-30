@@ -11,7 +11,7 @@ npm run build //打包项目
 ```
 
 ## Resume效果图
-<img src="https://github.com/codeyoyo/Full-stack-development/tree/master/resume/ui/main.jpg" />
+<img src="https://raw.githubusercontent.com/codeyoyo/Full-stack-development/master/resume/ui/main.jpg" />
 
 ## 价值观
 >使命：让金融更简单  
