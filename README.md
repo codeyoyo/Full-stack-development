@@ -10,6 +10,9 @@ npm run server //模拟生产环境运行项目
 npm run build //打包项目
 ```
 
+## Resume效果图
+<img src="https://github.com/codeyoyo/Full-stack-development/tree/master/resume/ui/main.jpg" />
+
 ## 价值观
 >使命：让金融更简单  
 >愿景：为3.14亿用户提供金融服务；成为最安全的金融生态平台；成为幸福指数最高的企业。  
