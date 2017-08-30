@@ -7,10 +7,13 @@ const extractCSS = new ExtractTextPlugin('css/[name].css');
 const extractSASS = new ExtractTextPlugin('css/[name].css');
 
 module.exports = {
-    entry: __dirname + '/src/main.js', //入口文件
+    entry: {
+        resume: __dirname + '/resume/app.js',
+        main: __dirname + '/src/main.js', //入口文件
+    },
     output: { //代码输出生成
         path: __dirname + '/dist', //生成路径
-        filename: 'bundle.js' //输出文件名
+        filename: 'js/[name].js' //输出文件名
     },
     module: { //loader模块配置
         rules: [{ //es6语法解析配置
@@ -25,7 +28,7 @@ module.exports = {
             use: extractCSS.extract(['css-loader', 'postcss-loader'])
         }, {
             test: /\.scss$/i,
-            include: [/src/],
+            include: [/src/, /resume/],
             exclude: [/node_modules/],
             use: extractCSS.extract(['css-loader', 'postcss-loader', 'sass-loader'])
         }],
@@ -50,7 +53,15 @@ module.exports = {
     plugins: [ //webpack插件配置
         new htmlWebpackPlugin({
             title: 'Full-stack-development',
-            template: __dirname + '/src/index.html'
+            template: __dirname + '/src/index.html',
+            filename: 'index.html',
+            chunks: ['main']
+        }),
+        new htmlWebpackPlugin({
+            title: 'resume',
+            template: __dirname + '/resume/index.html',
+            filename: 'resume.html',
+            chunks: ['resume']
         }),
         new webpack.HotModuleReplacementPlugin(), //webpack自带的热更新插件
         extractCSS,
