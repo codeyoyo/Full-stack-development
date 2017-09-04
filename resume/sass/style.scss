@@ -14,16 +14,110 @@ body {
     color: $white-font;
 }
 
+@mixin maragin-top($value:10px) {
+    margin-top: $value;
+}
+
+@mixin padding-top-bottom($value:10%) {
+    padding-top: $value;
+    padding-bottom: $value;
+}
+
 .banner {
     text-align: center;
     min-height: 150px;
     @extend .master-background-color;
-    padding-top: 10%;
-    padding-bottom: 10%;
+    @include padding-top-bottom();
+    .banner-descript {
+        font-size: 12px;
+    }
     .banner-btn {
-        width: 100px;
+        width: 110px;
         background-color: $decorate-color;
         margin: 0 auto;
-        height: 100px;
+        height: 30px;
+        line-height: 30px;
+        @include maragin-top();
+    }
+    .baner-watermark {
+        @include maragin-top(30px);
+        font-size: 30px;
+        opacity: $opacity-value;
+    }
+}
+
+.nav {
+    height: 100px;
+    text-align: center;
+    @include padding-top-bottom(30px);
+    ul {
+        list-style: none;
+        overflow: hidden;
+        display: inline-block;
+        li {
+            float: left;
+            margin-left: 30px;
+        }
+    }
+    a {
+        cursor: pointer;
+        font-weight: 800
+    }
+}
+
+.link-title {
+    padding-bottom: 10px;
+    border-bottom: $decorate-color 5px solid;
+    display: inline-block;
+    h2 {
+        font-weight: 500;
+    }
+}
+
+.about-box {
+    $height: 500px;
+    display: flex;
+    margin-top: -80px;
+    height: $height;
+    overflow: hidden;
+    >div {
+        height: $height;
+    }
+    .left {
+        flex: 0.4;
+        background-color: $master-color;
+        text-align: center;
+        line-height: $height;
+        span {
+            opacity: $opacity-value;
+            color: $white-font;
+        }
+    }
+    .right {
+        flex: 0.6;
+        background-color: $content-color;
+        padding: 5%;
+        text-align: left;
+    }
+    .content-box {
+        width: 75%;
+        .descript-box {
+            margin-top: 20px;
+        }
+        .weight {
+            font-weight: 500;
+        }
+        p {
+            opacity: 0.5;
+            margin-top: 20px;
+        }
+        .download {
+            display: inline-block;
+            border: 3px solid $master-color;
+            padding: 10px;
+            margin-top: 20px;
+            font-weight: 800;
+            color: $master-color;
+        }
     }
 }

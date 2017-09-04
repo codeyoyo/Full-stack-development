@@ -41,7 +41,7 @@ module.exports = {
         }]
     },
     devServer: { //生成环境构建
-        port: 7777,
+        port: 8777,
         host: 'localhost',
         historyApiFallback: true,
         setup: function(app) { //使用nodejs作代理请求或后台数据构造
