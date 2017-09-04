@@ -20,4 +20,10 @@ body {
     @extend .master-background-color;
     padding-top: 10%;
     padding-bottom: 10%;
+    .banner-btn {
+        width: 100px;
+        background-color: $decorate-color;
+        margin: 0 auto;
+        height: 100px;
+    }
 }
