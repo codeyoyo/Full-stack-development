@@ -1,0 +1,8 @@
+@mixin maragin-top($value:10px) {
+    margin-top: $value;
+}
+
+@mixin padding-top-bottom($value:10%) {
+    padding-top: $value;
+    padding-bottom: $value;
+}

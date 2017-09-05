@@ -1,4 +1,5 @@
 @import './variate.scss';
+@import './function.scss';
 *,
 body {
     padding: 0;
@@ -12,15 +13,6 @@ body {
 .master-background-color {
     background-color: $master-color;
     color: $white-font;
-}
-
-@mixin maragin-top($value:10px) {
-    margin-top: $value;
-}
-
-@mixin padding-top-bottom($value:10%) {
-    padding-top: $value;
-    padding-bottom: $value;
 }
 
 .banner {
@@ -123,7 +115,7 @@ body {
 }
 
 .module {
-    margin-top: 50px;
+    padding: 50px 0 50px 0;
     text-align: center;
 }
 
@@ -139,8 +131,7 @@ body {
     }
 }
 
-.content-box {
-    margin-top: 50px;
+.container {
     text-align: center;
 }
 
@@ -148,8 +139,29 @@ body {
     @extend .module;
     .expertise-row {
         display: flex;
+        padding: 5% 10% 0 10%;
     }
     .expertise-item {
         flex: 1;
+        h3 {
+            margin: 20px 0 20px 0;
+        }
+        p {
+            @extend .p-descript;
+        }
     }
+    $percentage-size:80px;
+    .expertise-percentage {
+        border: 5px solid $decorate-color;
+        border-radius: 100%;
+        width: $percentage-size;
+        height: $percentage-size;
+        margin: 0 auto;
+        line-height: $percentage-size;
+    }
+}
+
+.experience {
+    @extend .module;
+    background-color: $content-color;
 }
