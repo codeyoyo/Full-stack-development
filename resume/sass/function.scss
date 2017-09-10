@@ -6,3 +6,9 @@
     padding-top: $value;
     padding-bottom: $value;
 }
+
+@mixin last-no-margin {
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}

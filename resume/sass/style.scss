@@ -1,167 +1,271 @@
-@import './variate.scss';
-@import './function.scss';
-*,
-body {
-    padding: 0;
-    margin: 0;
-}
-
-.main {
-    width: 100%;
-}
-
-.master-background-color {
-    background-color: $master-color;
-    color: $white-font;
-}
-
-.banner {
-    text-align: center;
-    min-height: 150px;
-    @extend .master-background-color;
-    @include padding-top-bottom();
-    .banner-descript {
-        font-size: 12px;
+    @import './variate.scss';
+    @import './function.scss';
+    *,
+    body {
+        padding: 0;
+        margin: 0;
     }
-    .banner-btn {
-        width: 110px;
-        background-color: $decorate-color;
-        margin: 0 auto;
-        height: 30px;
-        line-height: 30px;
-        @include maragin-top();
+    
+    .main {
+        width: 100%;
     }
-    .baner-watermark {
-        @include maragin-top(30px);
-        font-size: 30px;
-        opacity: $opacity-value;
-    }
-}
-
-.nav {
-    height: 100px;
-    text-align: center;
-    @include padding-top-bottom(30px);
-    ul {
-        list-style: none;
-        overflow: hidden;
-        display: inline-block;
-        li {
-            float: left;
-            margin-left: 30px;
-        }
-    }
-    a {
-        cursor: pointer;
-        font-weight: 800
-    }
-}
-
-.link-title {
-    padding-bottom: 10px;
-    border-bottom: $decorate-color 5px solid;
-    display: inline-block;
-    h2 {
-        font-weight: 500;
-    }
-}
-
-.about-box {
-    $height: 500px;
-    display: flex;
-    margin-top: -80px;
-    height: $height;
-    overflow: hidden;
-    >div {
-        height: $height;
-    }
-    .left {
-        flex: 0.4;
+    
+    .master-background-color {
         background-color: $master-color;
+        color: $white-font;
+    }
+    
+    .banner {
         text-align: center;
-        line-height: $height;
-        span {
+        min-height: 150px;
+        @extend .master-background-color;
+        @include padding-top-bottom();
+        .banner-descript {
+            font-size: 12px;
+        }
+        .banner-btn {
+            width: 110px;
+            background-color: $decorate-color;
+            margin: 0 auto;
+            height: 30px;
+            line-height: 30px;
+            @include maragin-top();
+        }
+        .baner-watermark {
+            @include maragin-top(30px);
+            font-size: 30px;
             opacity: $opacity-value;
-            color: $white-font;
         }
     }
-    .right {
-        flex: 0.6;
-        background-color: $content-color;
-        padding: 5%;
-        text-align: left;
-    }
-    .content-box {
-        width: 75%;
-        .descript-box {
-            margin-top: 20px;
-        }
-        .weight {
-            font-weight: 100;
-        }
-        p {
-            opacity: 0.5;
-            margin-top: 20px;
-        }
-        .download {
+    
+    .nav {
+        height: 100px;
+        text-align: center;
+        @include padding-top-bottom(30px);
+        ul {
+            list-style: none;
+            overflow: hidden;
             display: inline-block;
-            border: 3px solid $master-color;
-            padding: 10px;
-            margin-top: 20px;
-            font-weight: 800;
-            color: $master-color;
+            li {
+                float: left;
+                margin-left: 30px;
+            }
+        }
+        a {
+            cursor: pointer;
+            font-weight: 800
         }
     }
-}
-
-.module {
-    padding: 50px 0 50px 0;
-    text-align: center;
-}
-
-.p-descript {
-    font-size: 10px;
-    opacity: 0.5;
-}
-
-.descript-box {
-    margin-top: 30px;
-    p {
-        @extend .p-descript;
+    
+    .link-title {
+        padding-bottom: 10px;
+        border-bottom: $decorate-color 5px solid;
+        display: inline-block;
+        h2 {
+            font-weight: 500;
+        }
     }
-}
-
-.container {
-    text-align: center;
-}
-
-.expertise {
-    @extend .module;
-    .expertise-row {
+    
+    .about-box {
+        $height: 500px;
         display: flex;
-        padding: 5% 10% 0 10%;
-    }
-    .expertise-item {
-        flex: 1;
-        h3 {
-            margin: 20px 0 20px 0;
+        margin-top: -80px;
+        height: $height;
+        overflow: hidden;
+        >div {
+            height: $height;
         }
+        .left {
+            flex: 0.4;
+            background-color: $master-color;
+            text-align: center;
+            line-height: $height;
+            span {
+                opacity: $opacity-value;
+                color: $white-font;
+            }
+        }
+        .right {
+            flex: 0.6;
+            background-color: $content-color;
+            padding: 5%;
+            text-align: left;
+        }
+        .content-box {
+            width: 75%;
+            .descript-box {
+                margin-top: 20px;
+            }
+            .weight {
+                font-weight: 100;
+            }
+            p {
+                opacity: 0.5;
+                margin-top: 20px;
+            }
+            .download {
+                display: inline-block;
+                border: 3px solid $master-color;
+                padding: 10px;
+                margin-top: 20px;
+                font-weight: 800;
+                color: $master-color;
+            }
+        }
+    }
+    
+    .module {
+        padding: 50px 0 50px 0;
+        text-align: center;
+    }
+    
+    .p-descript {
+        font-size: 10px;
+        opacity: 0.5;
+    }
+    
+    .descript-box {
+        margin-top: 30px;
         p {
             @extend .p-descript;
         }
     }
-    $percentage-size:80px;
-    .expertise-percentage {
-        border: 5px solid $decorate-color;
-        border-radius: 100%;
-        width: $percentage-size;
-        height: $percentage-size;
-        margin: 0 auto;
-        line-height: $percentage-size;
+    
+    .container {
+        text-align: center;
     }
-}
-
-.experience {
-    @extend .module;
-    background-color: $content-color;
-}
+    
+    .expertise {
+        @extend .module;
+        .expertise-row {
+            display: flex;
+            padding: 5% 10% 0 10%;
+        }
+        .expertise-item {
+            flex: 1;
+            h3 {
+                margin: 20px 0 20px 0;
+            }
+            p {
+                @extend .p-descript;
+            }
+        }
+        $percentage-size:80px;
+        .expertise-percentage {
+            border: 5px solid $decorate-color;
+            border-radius: 100%;
+            width: $percentage-size;
+            height: $percentage-size;
+            margin: 0 auto;
+            line-height: $percentage-size;
+        }
+    }
+    
+    $margin-bottom: 50px;
+    $history-content-hieght:105px;
+    $history-content-margin:10px;
+    .experience {
+        @extend .module;
+        $padding-right: 30px;
+        background-color: $content-color;
+        .container {
+            display: flex;
+            margin-top: 50px;
+            overflow: hidden;
+        }
+        .history {
+            flex: 0.4;
+            border-right: 1px $master-color dashed;
+            padding-right: $padding-right;
+        }
+        .year-module {
+            margin-bottom: $margin-bottom+$history-content-hieght+$history-content-margin;
+            text-align: right;
+            position: relative;
+            @include last-no-margin;
+            &::after {
+                $width: 5px;
+                content: " ";
+                position: absolute;
+                height: 5px;
+                width: $width;
+                border-radius: 100%;
+                border: 3px solid $master-color;
+                top: 50%;
+                margin-top: -1/2;
+                background-color: $white-font;
+                right: -($padding-right+$width);
+            }
+            >div {
+                color: $white-font;
+                margin-top: 5px;
+                &>span {
+                    padding: 5px;
+                    font-size: 10px;
+                }
+                &:nth-child(1)>span {
+                    background-color: $decorate-color;
+                }
+                &:nth-child(2)>span {
+                    background-color: $master-color;
+                    margin-top: 5px;
+                }
+            }
+        }
+        .describe {
+            flex: 0.6;
+            text-align: left;
+            padding-left: $padding-right;
+            .descript-module {
+                margin-bottom: $margin-bottom;
+                @include last-no-margin;
+                width: 60%;
+            }
+            .title {
+                font-size: 17px;
+            }
+            .subhead {
+                font-size: 15px;
+                opacity: 0.5;
+            }
+            .history-content {
+                height: $history-content-hieght;
+                @extend .p-descript;
+                margin-top: $history-content-margin;
+            }
+        }
+    }
+    
+    .education {
+        background-color: $white-font;
+        .year-module {
+            margin-bottom: $margin-bottom+$history-content-hieght+30px;
+        }
+    }
+    
+    .margin {
+        margin-top: 20px;
+    }
+    
+    .portfolio {
+        @extend .module;
+        $font-size: 13px;
+        background-color: $master-color;
+        color: $white-font;
+        p {
+            font-size: $font-size;
+            color: $white-font;
+        }
+        .nav-btn {
+            @include maragin-top(50px);
+            font-size: $font-size;
+            a {
+                margin-left: 30px;
+                color: $deputy-light-color;
+                cursor: pointer;
+            }
+            .selected {
+                color: $white-font;
+            }
+        }
+    }
