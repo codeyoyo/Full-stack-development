@@ -11,6 +11,7 @@ npm run build //打包项目
 ```
 
 ## Resume效果图
+### [查看demo请戳这里](https://codeyoyo.github.io/Full-stack-development/dist/resume.html)
 <img src="https://raw.githubusercontent.com/codeyoyo/Full-stack-development/master/resume/ui/main.jpg" />
 
 ## 价值观
