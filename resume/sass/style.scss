@@ -198,7 +198,7 @@
             }
             >div {
                 color: $white-font;
-                margin-top: 5px;
+                margin-top: 10px;
                 &>span {
                     padding: 5px;
                     font-size: 10px;
@@ -208,7 +208,6 @@
                 }
                 &:nth-child(2)>span {
                     background-color: $master-color;
-                    margin-top: 10px;
                 }
             }
         }
