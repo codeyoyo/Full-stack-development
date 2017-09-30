@@ -268,3 +268,17 @@
             }
         }
     }
+    
+    .portfolio-box {
+        .row {
+            font-size: 0;
+            width: 100%;
+            text-align: left;
+            &:nth-child(odd) {
+                @include row-item();
+            }
+            &:nth-child(even) {
+                @include row-item(1);
+            }
+        }
+    }

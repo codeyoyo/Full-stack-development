@@ -12,3 +12,53 @@
         margin-bottom: 0px;
     }
 }
+
+@mixin row-item($type:0) {
+    $item-height: 200px;
+    .item {
+        font-size: 15px;
+        width: (100%/4);
+        display: inline-block;
+        color: $deputy-light-color;
+        zoom: 1;
+        text-align: center;
+        height: $item-height;
+        line-height: $item-height;
+        position: relative;
+        @if $type==0 {
+            &:nth-child(odd) {
+                background-color: $nth-color;
+            }
+            &:nth-child(even) {
+                background-color: $eth-color;
+            }
+        }
+        @else {
+            &:nth-child(odd) {
+                background-color: $eth-color;
+            }
+            &:nth-child(even) {
+                background-color: $nth-color;
+            }
+        }
+    }
+    @keyframes selectAnimation {
+        from {
+            height: 0px;
+        }
+        to {
+            height: $item-height;
+        }
+    }
+    .select {
+        &:after {
+            content: " ";
+            animation: selectAnimation 1s;
+            background-color: $decorate-color;
+            height: $item-height;
+            width: 100%;
+            position: absolute;
+            left: 0px;
+        }
+    }
+}
