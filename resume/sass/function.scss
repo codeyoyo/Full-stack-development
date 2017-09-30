@@ -25,6 +25,7 @@
         height: $item-height;
         line-height: $item-height;
         position: relative;
+        cursor: pointer;
         @if $type==0 {
             &:nth-child(odd) {
                 background-color: $nth-color;
