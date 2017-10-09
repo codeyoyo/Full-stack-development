@@ -12,4 +12,8 @@ $(function() {
             $(this).removeClass('select');
         });
     }
+
+    $('#top').click(function() {
+        document.documentElement.scrollTop = document.body.scrollTop = 0;
+    });
 });

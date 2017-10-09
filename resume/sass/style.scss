@@ -282,3 +282,123 @@
             }
         }
     }
+    
+    .reffernces {
+        .container {
+            text-align: center;
+            width: 60%;
+            display: block;
+            margin: 0 auto;
+        }
+        .tab-item {
+            display: inline-block;
+            width: (100%/5);
+            margin-top: 80px;
+            padding: 25px;
+            background-color: #fff;
+            text-align: left;
+            margin-left: 20px;
+            .content {
+                color: $deputy-light-color;
+            }
+            h3 {
+                margin-top: 25px;
+                color: $master-color;
+            }
+            .discript {
+                font-size: 15px;
+            }
+        }
+    }
+    
+    .touch {
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 80px;
+        }
+        background-color: #fff;
+        $width-padding:20px;
+        .details {
+            flex: 1;
+            padding-right: $width-padding;
+            text-align: left;
+        }
+        .list li {
+            margin-top: 15px;
+            color: $deputy-light-color;
+        }
+        .block {
+            margin-right: 10px;
+            &::after {
+                content: ' ';
+                display: inline-block;
+                background-color: #848790;
+                height: 15px;
+                width: 15px;
+            }
+        }
+        .form-group {
+            flex: 1;
+            padding-left: $width-padding;
+            text-align: right;
+            .input,
+            .textarea {
+                display: block;
+                width: 95%;
+                border: 1px solid #848790;
+                margin-top: 15px;
+                text-indent: 10px;
+            }
+            .input {
+                height: 30px;
+            }
+            .textarea {
+                height: 200px;
+            }
+            .btn {
+                margin-right: 5%;
+                margin-top: 15px;
+                background-color: $white-font;
+                color: $master-color;
+                border: 3px solid $master-color;
+                width: 100px;
+                height: 50px;
+            }
+        }
+    }
+    
+    .map {
+        background-color: #F0EEF1;
+        color: $deputy-light-color;
+    }
+    
+    .bottom {
+        background-color: $master-color;
+        text-align: center;
+        position: relative;
+        .recommend-item {
+            background-color: #fff;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            font-size: 20px;
+            margin-left: 5px;
+            color: $master-color;
+        }
+        .top {
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            right: 0;
+            color: $white-font;
+            background: #000;
+            width: 20px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    }
